@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Salaries": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

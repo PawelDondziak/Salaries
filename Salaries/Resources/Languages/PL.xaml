@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--#region Information at the top of SalariesWindow -->
+    <system:String x:Key="NumberOfPeopleNamedSmith">Ludzie z imieniem Smith: </system:String>
+    <system:String x:Key="SmithWithBiggestSalary">Najlepiej zarabiający Smith: </system:String>
+    <system:String x:Key="DepartmentWithBiggestEarnings">Dział zarabiający najwięcej pieniędzy: </system:String>
+    <system:String x:Key="DepartmentWithMostEmployees">Dział z największą ilością pracowników: </system:String>
+    <!--#endregion-->  
+    
+    <!--#region Names of fields in ListView in SalariesWindow -->
+    <system:String x:Key="Id">Id</system:String>
+    <system:String x:Key="FirstName">Imie</system:String>
+    <system:String x:Key="LastName">Nazwikso</system:String>
+    <system:String x:Key="Email">Email</system:String>
+    <system:String x:Key="Department">Dział</system:String>
+    <system:String x:Key="Salary">Wynagrodzenie</system:String>
+    <system:String x:Key="OrderByLastNames">Posortuj po nazwiskach</system:String>
+    <!--#endregion-->
+    
+    
+</ResourceDictionary>

@@ -1,0 +1,69 @@
+﻿<Window x:Class="Salaries.MVVM.ViewPages.SalariesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Salaries.MVVM.ViewPages"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        MinWidth="700"
+        MinHeight="600">
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{StaticResource Primary}"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource TopBorderStyle}">
+            <WrapPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Text="{StaticResource NumberOfPeopleNamedSmith}"/>
+                    <TextBlock Text="{Binding NumberOfPeopleNamedSmith}"
+                               Style="{StaticResource ValuesFromDataTextStyle}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="{StaticResource SmithWithBiggestSalary}"/>
+                    <TextBlock Text="{Binding SmithWithBiggestSalary}" 
+                               Style="{StaticResource ValuesFromDataTextStyle}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="{StaticResource DepartmentWithBiggestEarnings}"/>
+                    <TextBlock Text="{Binding DepartmentWithBiggestEarnings}"
+                               Style="{StaticResource ValuesFromDataTextStyle}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="{StaticResource DepartmentWithMostEmployees}"/>
+                    <TextBlock Text="{Binding DepartmentWithMostEmployees}"
+                               Style="{StaticResource ValuesFromDataTextStyle}"/>
+                </StackPanel>
+
+                <StackPanel >
+                    <TextBlock Text="{StaticResource OrderByLastNames}"/>
+                    <CheckBox IsChecked="{Binding OrderByLastNames}" Command="{Binding OrderByLastNamesCommand}"/>
+                </StackPanel>
+            </WrapPanel>
+        </Border>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Employees}"
+                  IsSynchronizedWithCurrentItem="True">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{StaticResource Id}" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="{StaticResource FirstName}" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="{StaticResource LastName}" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="{StaticResource Email}" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="{StaticResource Department}" DisplayMemberBinding="{Binding Department}"/>
+                    <GridViewColumn Header="{StaticResource Salary}" DisplayMemberBinding="{Binding Salary}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
